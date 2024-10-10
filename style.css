@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(#ffe3fc, #ffadbb, #ffc6ff, #bdb2ff, #ffadad);
+}
+.wrapper{
+    background-color: blueviolet;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    width: 300px;
+}
+.lid{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform .25s linear;
+}
+.lid.one{
+    border-top: 100px solid lavender;
+    transform: rotateX(0deg);
+    z-index: 3;
+    transition-delay: .75s;
+}
+.lid.two{
+    transform: rotateX(0deg);
+    z-index: 1;
+    transition-delay: .5s;
+    border-top: 100px solid lavender;
+}
+.envelope{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 100px solid transparent;
+    border-right: 150px solid salmon;
+    border-bottom: 100px solid salmon;
+    border-left: 150px solid lightcoral;
+}
+.letter{
+    background-color: lavenderblush;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    transition: .5s;
+    width: 80%;
+    height: 80%;
+    z-index: 2;
+    opacity: 0;
+}
+.letter p{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+}
+.wrapper:hover .lid.one{
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+.wrapper:hover .lid.two{
+    transform: rotateX(180deg);
+    transition-delay: .25s;
+}
+.wrapper:hover .letter{
+    transform: translateY(-50px);
+    transition-delay: .5s;
+    opacity: 1;
+}
+.heart{
+    width: 50px;
+    height: auto;
+}
